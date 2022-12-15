@@ -35,7 +35,7 @@
 #include "hal/wdt_hal.h"
 
 #include "esp_partition.h"
-
+#include "esp_idf_version.h"
 #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 0, 0)
     #include "spi_flash_mmap.h"    
 #else
