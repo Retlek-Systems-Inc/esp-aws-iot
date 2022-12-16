@@ -35,7 +35,7 @@
 #include "hal/wdt_hal.h"
 
 #include "esp_partition.h"
-
+#include "esp_idf_version.h"
 #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 0, 0)
     #include "spi_flash_mmap.h"    
 #else
@@ -164,7 +164,7 @@ static void _esp_ota_ctx_clear( esp_ota_context_t * ota_ctx )
 
 static bool _esp_ota_ctx_validate( OtaFileContext_t * pFileContext )
 {
-    return( pFileContext != NULL && ota_ctx.cur_ota == pFileContext && pFileContext->pFile == ( uint8_t * ) &ota_ctx );
+    return( (pFileContext != NULL) && (ota_ctx.cur_ota == pFileContext) && ((uint8_t *)pFileContext->pFile == ( uint8_t * ) &ota_ctx) );
 }
 
 static void _esp_ota_ctx_close( OtaFileContext_t * pFileContext )

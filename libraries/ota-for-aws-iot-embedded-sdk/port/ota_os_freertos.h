@@ -36,6 +36,10 @@
 /* OTA library interface include. */
 #include "ota_os_interface.h"
 
+#if defined(__cplusplus)
+extern "C" {
+#endif // defined(__cplusplus)
+
 /**
  * @brief Initialize the OTA events.
  *
@@ -162,5 +166,9 @@ void * Malloc_FreeRTOS( size_t size );
  */
 
 void Free_FreeRTOS( void * ptr );
+
+#if defined(__cplusplus)
+}
+#endif // defined(__cplusplus)
 
 #endif /* ifndef _OTA_OS_FREERTOS_H_ */

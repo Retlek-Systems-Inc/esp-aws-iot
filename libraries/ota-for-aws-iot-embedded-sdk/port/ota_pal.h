@@ -34,6 +34,9 @@
 #include "ota.h"
 #include "esp_err.h"
 
+#if defined(__cplusplus)
+extern "C" {
+#endif // defined(__cplusplus)
 /**
  * @brief Abort an OTA transfer.
  *
@@ -227,5 +230,9 @@ esp_err_t otaPal_EraseLastBootPartition(void);
  *        - true:    If successful.
  */
 bool otaPal_SetCodeSigningCertificate(const char * pcCodeSigningCertificatePEM);
+
+#if defined(__cplusplus)
+}
+#endif // defined(__cplusplus)
 
 #endif /* ifndef OTA_PAL_H_ */
